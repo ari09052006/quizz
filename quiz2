@@ -1,0 +1,44 @@
+#include <iostream>
+#include <iomanip> 
+using namespace std;
+
+
+int main() {
+
+	double beratApel, beratJeruk, beratSemangka;
+	double hargaApelPerKg = 24000.0, hargaJerukPerKg = 32500.0, hargaSemangkaPerKg = 8000.0;
+
+    
+    cout << "Masukkan berat Apel (kg): ";
+    cin >> beratApel;
+    cout << "Masukkan berat Jeruk (kg): ";
+    cin >> beratJeruk;
+    cout << "Masukkan berat Semangka (kg): ";
+    cin >> beratSemangka;
+
+  
+    double totalHargaApel = beratApel * hargaApelPerKg;
+    double totalHargaJeruk = beratJeruk * hargaJerukPerKg;
+    double totalHargaSemangka = beratSemangka * hargaSemangkaPerKg;
+
+    double totalHarga = totalHargaApel + totalHargaJeruk + totalHargaSemangka;
+    double totalBerat = beratApel + beratJeruk + beratSemangka;
+
+  
+    double diskon = 0.0;
+    if (totalBerat > 10) {
+        diskon = 0.05;
+    }
+    else if (totalBerat > 8) {
+        diskon = 0.02;
+    }
+
+    double totalSetelahDiskon = totalHarga - (totalHarga * diskon);
+
+
+    cout << fixed << setprecision(2);
+    cout << "Total harga yang harus dibayar: Rp " << totalSetelahDiskon << endl;
+
+    return 0;
+
+}
