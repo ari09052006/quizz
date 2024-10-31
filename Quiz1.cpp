@@ -1,8 +1,9 @@
 #include <iostream>
+#include <cmath> 
 using namespace std;
 
 void hitungEK(double massa, double kecepatan) {
-	double energiKinetik = 0.5 * massa * kecepatan * kecepatan;
+	double energiKinetik = 0.5 * massa * pow(kecepatan,2);
 	cout << "energi kinetik EK : " << energiKinetik << "joule" << endl;
 
 }
@@ -11,15 +12,14 @@ void hitungEK(double massa, double kecepatan) {
 int main() {
 	double massa, kecepatan;
 
-	// input masa dalam kg
+
 	cout << "masukkan massa (kg):" ;
 	cin >> massa;
 
-	// input kecepatan m/s
+
 	cout << "masukan kecepatan (m/s):";
 	cin >> kecepatan;
 
-	// memanggil fungsi u/ menghitung energi kinetik
 	hitungEK(massa, kecepatan);
 
 	return 0;
